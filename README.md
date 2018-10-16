@@ -12,7 +12,10 @@ chmod +x remember
 ```
 
 Then just call remeber with the thing you want to remember
-`
+```
+./remember "to buy milk"
+```
+
 If you call remeber without any parameters, it'll display the things you have to remember:
 ```
 ./remeber
