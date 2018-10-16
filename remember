@@ -1,0 +1,50 @@
+#!/bin/bash
+
+file="$HOME/.remember"
+
+[ "$1" ] || {
+	touch $file 
+	txt=$(cat $file)
+	num=1
+	if [ -e "$file" ] && (( ${#txt} > 1 ))
+		then
+		clear
+		echo 
+		echo "    NEED TO REMEMBER"
+		echo "    ---------------------------------------"
+		while read line
+			do 
+			echo "    $num - $line"
+			num=$((num+1))
+		done < "$file"
+		echo 
+		echo
+	fi
+	exit
+}
+
+if [ "$1" == "nothing" ]
+	then
+	echo -n "" > "$file"
+	clear
+	echo "Everything erased!"
+elif [ "$1" == "!" ]
+	then
+	re='^[0-9]+$'
+	if [ $2 ] && [[ $2 =~ $re ]]
+		then
+		sed $2d "$file" -i
+		$0
+	else
+		echo "Invalid command."
+	fi
+	exit
+else
+	if [ -z "$file" ]
+		then
+		echo "$1" > "$file"
+	else
+		echo "$1" >> "$file"
+	fi
+	$0
+fi
