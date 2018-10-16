@@ -1,6 +1,6 @@
 # Remember
 
-Remember is a simple bash script that allow you to write "to do" lists.
+Remember is a simple bash script that allows you to write "to do" lists and things you want to remeber, in your terminal.
 
 !["Remember"](screenshot.png)
 
