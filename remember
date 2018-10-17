@@ -39,12 +39,7 @@ elif [ "$1" == "!" ]
 		echo "Invalid command."
 	fi
 	exit
-else
-	if [ -z "$file" ]
-		then
-		echo "$1" > "$file"
-	else
-		echo "$1" >> "$file"
-	fi
+else		
+	echo "$1" >> "$file"
 	$0
 fi
