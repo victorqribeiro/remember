@@ -6,37 +6,43 @@ Remember is a simple bash script that allows you to write "to do" lists and thin
 
 ## How to use
 
-Give remember execute permission
-```
-chmod +x remember
-```
+- Give remember execute permission
 
-Then just call remeber with the thing you want to remember
-```
-./remember "to buy milk"
-```
+    ```bash
+    chmod +x remember
+    ```
 
-If you call remeber without any parameters, it'll display the things you have to remember:
-```
-./remeber
-```
+- Then just call remeber with the thing you want to remember
 
-To erase something, pass the ! parameter with the number of the thing you want to forget:
-```
-./remember ! 1
-```
+    ```bash
+    ./remember "to buy milk"
+    ```
 
-Or to erase everything at once, just call remeber nothing:
-```
-./remember nothing
-```
+- If you call remeber without any parameters, it'll display the things you have to remember:
+
+    ```bash
+    ./remember
+    ```
+
+- To erase something, pass the ! parameter with the number of the thing you want to forget:
+
+    ```bash
+    ./remember ! 1
+    ```
+
+- Or to erase everything at once, just call remeber nothing:
+
+    ```bash
+    ./remember nothing
+    ```
 
 ## Important
 
-To work as it was intended, you should put it in your scripts folder and add it to the bash config file .bashrc
-```
+To work as it was intended, you should put it in your scripts folder and add it to the bash config file `~/.bashrc`
+
+```bash
 PATH=$PATH:~/scripts
 remember
 ```
 
-That way everytime you open the terminal it will show you the things you have to remeber, and also, you will be able to call it without the ./ 
+That way everytime you open the terminal it will show you the things you have to remeber, and also, you will be able to call it without the `./`
